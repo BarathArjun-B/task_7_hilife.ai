@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Clock In/Out Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Register Section -->
+    <div id="registerSection" class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Employee Timer</h1>
+                <p>Create Your Account</p>
+            </div>
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" placeholder="Enter password" required>
+                </div>
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Register</button>
+                <p class="toggle-auth">Already have an account? <span id="goToLogin">Login here</span></p>
+            </form>
+            <div id="registerMessage" class="message"></div>
+        </div>
+    </div>
+
+    <!-- Login Section -->
+    <div id="loginSection" class="auth-container hidden">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Employee Timer</h1>
+                <p>Login to Your Account</p>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Login</button>
+                <p class="toggle-auth">Don't have an account? <span id="goToRegister">Register here</span></p>
+            </form>
+            <div id="loginMessage" class="message"></div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboardSection" class="dashboard-container hidden">
+        <div class="dashboard-header">
+            <div class="header-content">
+                <div>
+                    <h1>Employee Dashboard</h1>
+                    <p style="color: var(--text-light); margin-top: 4px; font-size: 14px;">Time & Attendance Management</p>
+                </div>
+                <button id="logoutBtn" class="btn btn-logout">Sign Out</button>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <!-- User Info Card -->
+            <div class="card user-card">
+                <div class="card-header">Employee Profile</div>
+                <div class="user-info">
+                    <div class="info-row">
+                        <span class="info-label">Employee Name</span>
+                        <span id="userName" class="info-value">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Email Address</span>
+                        <span id="userEmail" class="info-value">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Current Status</span>
+                        <span id="userStatus" class="info-value status-badge clocked-out">Clocked Out</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timer Card -->
+            <div class="card timer-card">
+                <div class="card-header">Work Timer</div>
+                <div class="timer-display">
+                    <div class="timer-value" id="timerDisplay">00:00:00</div>
+                    <div class="timer-label">Current Session</div>
+                </div>
+                <div class="timer-stats">
+                    <div class="stat">
+                        <span class="stat-label">Today's Total Work Time</span>
+                        <span id="totalWorkTime" class="stat-value">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Clock In/Out Buttons -->
+            <div class="card actions-card">
+                <div class="button-group">
+                    <button id="clockInBtn" class="btn btn-success btn-full">⏱ Clock In</button>
+                    <button id="clockOutBtn" class="btn btn-danger btn-full hidden">⏹ Clock Out</button>
+                </div>
+            </div>
+
+            <!-- Work History -->
+            <div class="card history-card">
+                <div class="card-header">Work Sessions Today</div>
+                <div id="workHistory" class="history-list">
+                    <p class="empty-message">No sessions recorded yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
