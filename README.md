@@ -1,4 +1,4 @@
-# Employee Clock In / Clock Out Timer Management System
+# Employee Clock In / Clock Out Timer
 
 This project is a responsive Employee Clock In / Clock Out Timer Management Web Application developed using:
 
