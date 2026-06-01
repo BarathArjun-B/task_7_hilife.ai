@@ -2,8 +2,8 @@
 
 This project is a responsive Employee Clock In / Clock Out Timer Management Web Application developed using:
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - Vanilla JavaScript
 - LocalStorage
 
